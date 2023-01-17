@@ -1,1 +1,2 @@
-image: ps2dev/ps2dev:latest
+image:
+  file: .gitpod.Dockerfile
