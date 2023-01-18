@@ -1,4 +1,4 @@
-FROM gitpod/workspace-c:latest
+FROM gitpod/workspace-full:latest
 RUN apt-get update && apt-get install -y \
   build-essential \
   gcc \
