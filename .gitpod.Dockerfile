@@ -1,5 +1,5 @@
 FROM gitpod/workspace-c:latest
-RUN apt install -y \
+RUN apt-get update && apt-get install -y \
   build-essential \
   gcc \
   clang \
@@ -14,8 +14,7 @@ RUN apt install -y \
   gettext \
   wget \
   libgsl-dev
-RUN apt update
-RUN apt install -y \
+RUN apt-get update && apt-get install -y \
   texinfo \
   bison \
   flex \
@@ -23,4 +22,5 @@ RUN apt install -y \
   libgmp3-dev \
   libmpfr-dev \
   libmpc-dev \
-  zlib1g-dev
+  zlib1g-dev \
+  && rm -rf /var/lib/apt/lists/*
