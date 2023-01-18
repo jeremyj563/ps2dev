@@ -1,2 +1,1 @@
-image:
-  file: gitpod/workspace-full:latest
+image: gitpod/workspace-full:latest
