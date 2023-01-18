@@ -1,50 +1,9 @@
 image:
   file: .gitpod.Dockerfile
 
-# tasks:
-# - name: Set environment variables
-#   before: |
-#     export PS2DEV=/usr/local/ps2dev
-#     export PS2SDK=$PS2DEV/ps2sdk
-#     export GSKIT=$PS2DEV/gsKit
-#     export PATH=$PATH:$PS2DEV/bin:$PS2DEV/ee/bin:$PS2DEV/iop/bin:$PS2DEV/dvp/bin:$PS2SDK/bin
-#     exit
-# - name: Create ps2dev folder
-#   before: |
-#     sudo mkdir /usr/local/ps2dev
-#     sudo chmod 777 /usr/local/ps2dev
-#     exit
-# - name: Install dependencies
-#   before: |
-#     apt-get update && \
-#     apt-get install -y \
-#       build-essential \
-#       gcc \
-#       clang \
-#       clang-format \
-#       make \
-#       cmake \
-#       patch \
-#       git \
-#       texinfo \
-#       flex \
-#       bison \
-#       gettext \
-#       wget \
-#       libgsl-dev
-#     apt-get update && \
-#     apt-get install -y \
-#       texinfo \
-#       bison \
-#       flex \
-#       gettext \
-#       libgmp3-dev \
-#       libmpfr-dev \
-#       libmpc-dev \
-#       zlib1g-dev \
-#       && rm -rf /var/lib/apt/lists/*
-#     exit
-# - name: ""
-#   init: |
-#     echo "Time to init..."
-#     exit
+tasks:
+- name: "Build PS2 Development Toolchain"
+  init: |
+    sudo mkdir /usr/local/ps2dev
+    sudo chmod 777 /usr/local/ps2dev
+    cd $GITPOD_REPO_ROOT && ./build-all.sh
